@@ -17,3 +17,7 @@ from rest_framework.views import APIView # for cbv
 class Home(APIView):
     def get(self, request):
         return Response({'name': 'jack'})
+
+    def post(self, request):
+        name = request.data['name']
+        return Response({'name': name})
