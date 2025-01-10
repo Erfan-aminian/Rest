@@ -7,6 +7,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView # for cbv
 from .models import Person
 from .serializers import PersonSerializer
+from rest_framework.permissions import IsAdminUser
 # Create your views here.
 
 '''function base views code'''
@@ -16,6 +17,8 @@ from .serializers import PersonSerializer
 
 ''' Class base View '''
 class Home(APIView):
+    permission_classes = [IsAdminUser,]
+
     def get(self, request):
         persons = Person.objects.all()
         ser_data = PersonSerializer(instance=persons, many=True)
