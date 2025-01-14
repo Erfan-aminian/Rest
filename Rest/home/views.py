@@ -10,9 +10,10 @@ from rest_framework.status import HTTP_200_OK, HTTP_201_CREATED, HTTP_400_BAD_RE
 from rest_framework.views import APIView # for cbv
 from .models import Person
 from .serializers import PersonSerializer, QuestionSerializer, AnswerSerializer
-from rest_framework.permissions import IsAdminUser
+from rest_framework.permissions import IsAdminUser, IsAuthenticated
 from .models import Question, Answer
 from rest_framework import status
+from permissions import IsOwnerOrReadOnly
 # Create your views here.
 
 '''function base views code'''
@@ -34,6 +35,8 @@ class Home(APIView):
 
 
 class QuestionListView(APIView):
+    permission_classes = [IsAuthenticated,]
+
 
     def get(self, request):
         question = Question.objects.all()
@@ -51,8 +54,11 @@ class QuestionCreateView(APIView):
 
 
 class QuestionUpdateView(APIView):
+    permission_classes = [IsOwnerOrReadOnly,]
+
     def put(self, request, pk):
         question = Question.objects.get(pk=pk)
+        self.check_object_permissions(request, question)
         ser_data = QuestionSerializer(instance=question, data=request.data, partial=True)
         if ser_data.is_valid():
             ser_data.save()
@@ -61,6 +67,8 @@ class QuestionUpdateView(APIView):
 
 
 class QuestionDeleteView(APIView):
+    permission_classes = [IsOwnerOrReadOnly,]
+
     def delete (self, request, pk):
         question = Question.objects.get(pk=pk)
         question.delete()
