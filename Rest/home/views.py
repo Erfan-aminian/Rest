@@ -14,7 +14,7 @@ from rest_framework.status import HTTP_200_OK, HTTP_201_CREATED, HTTP_400_BAD_RE
 from rest_framework.views import APIView # for cbv
 from rest_framework.permissions import IsAdminUser, IsAuthenticated
 from rest_framework import status
-from permissions import IsOwnerOrReadOnly,
+from permissions import IsOwnerOrReadOnly
 from rest_framework.throttling import ScopedRateThrottle
 
 # Create your views here.

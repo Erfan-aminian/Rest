@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'accounts.apps.AccountsConfig',
     'home.apps.HomeConfig',
-    'rest_framework.authtoken',
+    #'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -130,7 +130,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #rest_framework
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.TokenAuthentication',
+        #'rest_framework.authentication.TokenAuthentication',
     ],
     'DEFAULT_THROTTLE_CLASSES': [
         'rest_framework.throttling.AnonRateThrottle',
@@ -138,7 +138,7 @@ REST_FRAMEWORK = {
         'rest_framework.throttling.ScopedRateThrottle',
 
     ],
-    'DEFAULT_THROTTLE_RATES':{
+    'DEFAULT_THROTTLE_RATES': {
         'question': '3/hour',
         'anon': '5/day',
         'user': '10/day'
