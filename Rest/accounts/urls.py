@@ -20,7 +20,3 @@ urlpatterns += router.urls
 
 
 
-# {
-#     "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTczNzU3MjA4MywiaWF0IjoxNzM3NDg1NjgzLCJqdGkiOiJlMjVhOTk0NzVlZTI0ZmUyOTE4M2IxODcyYTg4MDg3YSIsInVzZXJfaWQiOjF9.QVP4Jk3V0ePkAAF--3nwCMdgY5TuiofQawZlYb41Emg",
-#     "access": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM3NDg1OTgzLCJpYXQiOjE3Mzc0ODU2ODMsImp0aSI6IjM0NDcxNjE4M2ZjYTQwMzRiMGRlYjgwZDNkMDBjYjBkIiwidXNlcl9pZCI6MX0.ZGRQjlwNaa1q5YqBxV7M70BEjcj_jZn6jJqCOeMKprI"
-# }

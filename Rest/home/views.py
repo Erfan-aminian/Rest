@@ -12,7 +12,7 @@ from rest_framework.decorators import api_view # for function base view
 from rest_framework.response import Response
 from rest_framework.status import HTTP_200_OK, HTTP_201_CREATED, HTTP_400_BAD_REQUEST
 from rest_framework.views import APIView # for cbv
-from rest_framework.permissions import IsAdminUser, IsAuthenticated
+from rest_framework.permissions import IsAdminUser, IsAuthenticated, AllowAny
 from rest_framework import status
 from permissions import IsOwnerOrReadOnly
 from rest_framework.throttling import ScopedRateThrottle
