@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'accounts.apps.AccountsConfig',
     'home.apps.HomeConfig',
+    'drf_spectacular',
+
     #'rest_framework.authtoken',
 ]
 
@@ -143,9 +145,17 @@ REST_FRAMEWORK = {
         'question': '3/hour',
         'anon': '5/day',
         'user': '10/day'
-    }
+    },
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Q/A Rest',
+    'DESCRIPTION': 'Your project description',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+}
 
 
 JWT_AUTH = {
